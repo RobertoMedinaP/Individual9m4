@@ -21,7 +21,10 @@ public class Activity2 extends AppCompatActivity {
 
         Intent intento = getIntent();
         String imagen = intento.getStringExtra("imagen");
+        String mensaje= intento.getStringExtra("mensaje");
         binding.iv5.setImageResource(Integer.parseInt(imagen));
+        binding.tv2.setText(mensaje);
+
 
         binding.bt2.setOnClickListener(new View.OnClickListener() {
             @Override

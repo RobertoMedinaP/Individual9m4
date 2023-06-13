@@ -23,45 +23,45 @@ public class MainActivity extends AppCompatActivity {
         binding.bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
-                onDestroy();
+                finishAffinity();
             }
         });
 
         binding.iv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                enviar(""+R.drawable.abeja);
+                enviar(""+R.drawable.abeja,"Es ud una persona tenaz como la abeja");
             }
         });
 
         binding.iv2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                enviar(""+R.drawable.chocolate);
+                enviar(""+R.drawable.chocolate,"Ud es dulce y amargo como el chocolate");
             }
         });
 
         binding.iv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                enviar(""+R.drawable.eventos);
+                enviar(""+R.drawable.eventos, "Ud. está pensando en sus tareas pendientes");
             }
         });
 
         binding.iv4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                enviar(""+R.drawable.rana);
+                enviar(""+R.drawable.rana,"Ud esta feliz cantando como la rana");
             }
         });
 
     }
 
-    protected  void enviar(String image){
+    protected  void enviar(String image, String mensaje){
 
         Intent intento = new Intent(MainActivity.this, Activity2.class) ;
         intento.putExtra("imagen",image);
+        intento.putExtra("mensaje", mensaje);
         startActivity(intento);
     }
 }
